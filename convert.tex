@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{sagetex}
+
+\begin{document}
+
+%   FORMAT: [ [ [1] , [x,1,2] ] , [ [A] , [y,1,0] , [x,1,0] ] ]
+%   where each mini-list in the list is an expression
+%   the first term in each mini-list is the A term
+%   the remaining term in each mini-list is formatted by [variable,power,subscript]
+
+%   NOTE: the order for the input matters.
+%   while the output is not ordered, the order of output technically does not matter since it is a final bracket.
+%   a = y_{-1}
+%   b = z_{-1}
+%   c = t_{-1}
+
+%   change the input as desired in line 22 to match the desired input expression
+
+\begin{sagesilent}
+gap.Read('"/proc/cygdrive/C/Users/Alex/sagetex/kauffmanbracket.g"')
+load('~/sagetex/change.sage')  
+e=gap('kauffmanbracket([[[1],[y,1,1],[t,1,-1],[x,1,2]]])')
+f(e)
+\end{sagesilent}
+
+$\sage{latex(f(e))}$
+
+$(-2*A^18*z-3*A^14*x*b+2*A^14*z+A^12*x^2*z-A^12*y*t+A^10*x*b+A^8*x^3*b-4*A^10*z+A^8*x*y*c-A^8*y*t+2*A^6*x^2*y*t+A^4*x^2*z+A^4*x*y*c-A^2*x^3*y*c+A^2*x^2*y*t-x^4*y*t)/A^8
+$
+
+\end{document}
